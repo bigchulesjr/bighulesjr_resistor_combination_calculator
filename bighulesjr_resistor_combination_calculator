@@ -1,0 +1,132 @@
+# Resistor Combination Calculator
+# Author: Peter Emmanuel Dotunchowo
+
+def calculate_series(resistors):
+    """Calculate total resistance in series."""
+    return sum(resistors)
+
+
+def calculate_parallel(resistors):
+    """Calculate total resistance in parallel."""
+    total = sum(1 / r for r in resistors)
+    return 1 / total
+
+
+def main():
+    print("================================")
+    print("  RESISTOR COMBINATION CALCULATOR")
+    print("================================")
+
+    try:
+        number = int(input("Enter number of resistors: "))
+
+        if number <= 0:
+            print("Error: Enter a positive number.")
+            return
+
+        resistors = []
+
+        # Collect resistor values
+        for i in range(number):
+            value = float(input(f"Enter resistor {i + 1} value (Ohms): "))
+
+            if value <= 0:
+                print("Error: Resistance must be positive.")
+                return
+
+            resistors.append(value)
+
+        # Calculate total resistance
+        series = calculate_series(resistors)
+        parallel = calculate_parallel(resistors)
+
+        print("\n========== RESULTS ==========")
+        print(f"Series Resistance: {series:.2f} Ohms")
+        print(f"Parallel Resistance: {parallel:.2f} Ohms")
+
+        # Own twist: compare both combinations
+        print("\n========== COMPARISON ==========")
+
+        if series > parallel:
+            print("Series resistance is greater.")
+        elif series < parallel:
+            print("Parallel resistance is greater.")
+        else:
+            print("Both resistances are equal.")
+
+        print("\nCalculation completed successfully!")
+
+    except ValueError:
+        print("Invalid input! Please enter numbers only.")
+
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+# Resistor Combination Calculator
+# Author: Peter Emmanuel Dotunchowo
+
+def calculate_series(resistors):
+    """Calculate total resistance in series."""
+    return sum(resistors)
+
+
+def calculate_parallel(resistors):
+    """Calculate total resistance in parallel."""
+    total = sum(1 / r for r in resistors)
+    return 1 / total
+
+
+def main():
+    print("================================")
+    print("  RESISTOR COMBINATION CALCULATOR")
+    print("================================")
+
+    try:
+        number = int(input("Enter number of resistors: "))
+
+        if number <= 0:
+            print("Error: Enter a positive number.")
+            return
+
+        resistors = []
+
+        # Collect resistor values
+        for i in range(number):
+            value = float(input(f"Enter resistor {i + 1} value (Ohms): "))
+
+            if value <= 0:
+                print("Error: Resistance must be positive.")
+                return
+
+            resistors.append(value)
+
+        # Calculate total resistance
+        series = calculate_series(resistors)
+        parallel = calculate_parallel(resistors)
+
+        print("\n========== RESULTS ==========")
+        print(f"Series Resistance: {series:.2f} Ohms")
+        print(f"Parallel Resistance: {parallel:.2f} Ohms")
+
+        # Own twist: compare both combinations
+        print("\n========== COMPARISON ==========")
+
+        if series > parallel:
+            print("Series resistance is greater.")
+        elif series < parallel:
+            print("Parallel resistance is greater.")
+        else:
+            print("Both resistances are equal.")
+
+        print("\nCalculation completed successfully!")
+
+    except ValueError:
+        print("Invalid input! Please enter numbers only.")
+
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
